@@ -1,0 +1,58 @@
+<div class="container">
+
+<div class="row">
+  <div class="col l8">
+    <div class="card medium">
+      <div class="card-image">
+        <img src="images/sample-1.jpg">
+        <span class="card-title"><%= @lastpost.title %></span>
+      </div>
+      <div class="card-content">
+        <p><%= @lastpost.snippet %></p>
+      </div>
+      <div class="card-action">
+        <%= link "Read more", to: post_path(@conn, :show, @lastpost), class: "btn yellow-text" %>
+      </div>
+    </div>
+  </div><!-- end of left col-->
+  <div class="col 4">
+    <p>
+      Ad Space
+    </p>
+  </div>
+</div><!-- end of top row-->
+
+<div class="row">
+  <div class="col l4">
+    <h3 class="thin">Gins</h3>
+
+  </div>
+  <div class="col l4">
+    <h3 class="thin">Bars</h3>
+
+  </div>
+</div>
+
+<div class="row">
+<%= for post <- @postsdesc do %>
+  <div class="col s12 l8">
+
+
+    <div class="card hoverable">
+
+
+      <div class="card-content">
+        <span class="card-title"><h3><%= link post.title, to: post_path(@conn, :show, post), class: "flow-text" %></h3></span>
+        <p><%= post.snippet %></p>
+        <p><small><%= post.inserted_at |> Calendar.Strftime.strftime!("%A, %e %B %Y") %></small></p>
+      </div>
+      <div class="card-action">
+        <%= link "Read more", to: post_path(@conn, :show, post), class: "btn yellow-text" %>
+      </div>
+
+    </div>
+  </div>
+  <% end %>
+
+  </div>
+</div><!--end of container-->

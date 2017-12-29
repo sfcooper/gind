@@ -1,0 +1,5 @@
+<h2>Edit Gin</h2>
+
+<%= render "form.html", Map.put(assigns, :action, gin_path(@conn, :update, @gin)) %>
+
+<span><%= link "Back", to: gin_path(@conn, :index) %></span>

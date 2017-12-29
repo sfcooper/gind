@@ -1,0 +1,33 @@
+<h2>Show Gin</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @gin.name %>
+  </li>
+
+  <li>
+    <strong>Brand:</strong>
+    <%= @gin.brand %>
+  </li>
+
+  <li>
+    <strong>Slug:</strong>
+    <%= @gin.slug %>
+  </li>
+
+  <li>
+    <strong>Text:</strong>
+    <%= @gin.text %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @gin.status %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: gin_path(@conn, :edit, @gin) %></span>
+<span><%= link "Back", to: gin_path(@conn, :index) %></span>

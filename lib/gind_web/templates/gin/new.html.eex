@@ -1,0 +1,8 @@
+<div class="container">
+
+<h2 class="thin">New Gin</h2>
+
+<%= render "form.html", Map.put(assigns, :action, gin_path(@conn, :create)) %>
+
+<span><%= link "Back", to: gin_path(@conn, :index) %></span>
+</div>

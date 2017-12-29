@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>The Gin Detective</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/materialize.css") %>">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper white">
+        <a href="#" class="brand-logo center black-text thin">The Gin Detective</a>
+        <ul class="hide-on-med-and-down">
+          <li>
+            <a href="/" class="left teal-text"><i class="large material-icons">home</i></a>
+          </li>
+        </ul>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons teal-text">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><%= link("Gin", to: "/gin", class: "teal-text") %></li>
+          <li><span><%= link("About", to: "/about", class: "teal-text") %></span></li>
+
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><span><li><%= link("Home", to: "/", class: "teal-text") %></li></span></li>
+          <li><span><li><%= link("Gin", to: "/gin", class: "teal-text") %></li></span></li>
+          <hr />
+          <li><span><li><%= link("About", to: "/about", class: "teal-text") %></li></span></li>
+        </ul>
+      </div>
+    </nav>
+
+      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
+      <main role="main">
+        <%= render @view_module, @view_template, assigns %>
+      </main>
+
+    </div> <!-- /container -->
+
+    <footer class="page-footer teal">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="yellow-text">Links</h5>
+        <ul>
+
+          <li><%= link("About", to: "/about", class: "white-text") %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright teal darken-2">
+    <div class="container">
+    © 2017 The Gin Detective
+    <a class="grey-text text-lighten-4 right" href="#!">Happy Drinking</a>
+    </div>
+  </div>
+</footer>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <script>
+                 // Activate the side menu
+                 $(".button-collapse").sideNav();
+                 $('ul.tabs').tabs();
+                 $('.parallax').parallax();
+                 $(".dropdown-button").dropdown();
+                 $('select').material_select();
+
+           </script>
+           <!-- Global site tag (gtag.js) - Google Analytics -->
+       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-211576-14"></script>
+       <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+
+         gtag('config', 'UA-211576-14');
+       </script>
+
+  </body>
+</html>

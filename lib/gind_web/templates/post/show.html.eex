@@ -1,0 +1,17 @@
+<div class="container">
+
+<h2 class="teal-text"><%= @post.title %></h2>
+
+    <p class="flow-text">
+    <%= @post.snippet %>
+  </p>
+
+  <p>
+    <%= @post.text %>
+  </p>
+
+
+<span><%= link "Edit", to: post_path(@conn, :edit, @post) %></span>
+<span><%= link "Back", to: post_path(@conn, :index) %></span>
+
+</div>

@@ -1,0 +1,39 @@
+<div class="container">
+<h2 class="thin">Gins</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Brand</th>
+      <th>Slug</th>
+      <th>Text</th>
+      <th>Status</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for gin <- @gins do %>
+    <tr>
+      <td><%= gin.name %></td>
+      <td><%= gin.brand %></td>
+      <td><%= gin.slug %></td>
+      <td><%= gin.text %></td>
+      <td><%= gin.status %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: gin_path(@conn, :show, gin), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: gin_path(@conn, :edit, gin), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: gin_path(@conn, :delete, gin), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Gin", to: gin_path(@conn, :new) %></span>
+
+
+</div>
+<br />
