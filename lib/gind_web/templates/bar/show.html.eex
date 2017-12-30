@@ -1,0 +1,43 @@
+<div claaa="container">
+
+<h2>Show Bar</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @bar.name %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @bar.address %>
+  </li>
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @bar.phone %>
+  </li>
+
+  <li>
+    <strong>Website:</strong>
+    <%= @bar.website %>
+  </li>
+
+  <li>
+    <strong>Country:</strong>
+    <%= @bar.country %>
+  </li>
+
+  <li>
+    <strong>Country:</strong>
+    <%= @bar.country %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: bar_path(@conn, :edit, @bar) %></span>
+<span><%= link "Back", to: bar_path(@conn, :index) %></span>
+
+<br />
+</div>

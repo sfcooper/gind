@@ -1,7 +1,7 @@
 <div class="container">
 
 <div class="row">
-  <div class="col l8">
+  <div class="col l8 s12">
     <div class="card medium">
       <div class="card-image">
         <img src="images/sample-1.jpg">

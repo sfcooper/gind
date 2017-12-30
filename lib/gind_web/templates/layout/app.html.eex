@@ -25,12 +25,14 @@
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons teal-text">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><%= link("Gin", to: "/gin", class: "teal-text") %></li>
+          <li><%= link("Bars", to: "/bar", class: "teal-text") %></li>
           <li><span><%= link("About", to: "/about", class: "teal-text") %></span></li>
 
         </ul>
         <ul class="side-nav" id="mobile-demo">
           <li><span><li><%= link("Home", to: "/", class: "teal-text") %></li></span></li>
           <li><span><li><%= link("Gin", to: "/gin", class: "teal-text") %></li></span></li>
+          <li><span><li><%= link("Bars", to: "/bar", class: "teal-text") %></li></span></li>
           <hr />
           <li><span><li><%= link("About", to: "/about", class: "teal-text") %></li></span></li>
         </ul>
@@ -87,6 +89,10 @@
          gtag('js', new Date());
 
          gtag('config', 'UA-211576-14');
+       </script>
+       <!--Firebase Authentication-->
+       <script type="text/javascript">
+          var provider = new firebase.auth.FacebookAuthProvider();
        </script>
 
   </body>

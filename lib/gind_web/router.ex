@@ -20,8 +20,10 @@ defmodule GindWeb.Router do
     get "/about", AboutController, :index
     get "/post", PostController, :index
     get "/gin", GinController, :index
+    get "/bar", BarController, :index
     resources "/posts", PostController
     resources "/gins", GinController
+    resources "/bars", BarController
   end
 
   # Other scopes may use custom stacks.

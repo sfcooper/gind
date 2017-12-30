@@ -1,0 +1,43 @@
+<div class="container">
+
+<h2>Listing Bars</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Text</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Website</th>
+      <th>Country</th>
+
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for bar <- @bars do %>
+    <tr>
+      <td><%= bar.name %></td>
+      <td><%= bar.text %></td>
+      <td><%= bar.address %></td>
+      <td><%= bar.phone %></td>
+      <td><%= bar.website %></td>
+      <td><%= bar.country %></td>
+
+
+      <td class="text-right">
+        <span><%= link "Show", to: bar_path(@conn, :show, bar), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: bar_path(@conn, :edit, bar), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: bar_path(@conn, :delete, bar), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Bar", to: bar_path(@conn, :new) %></span>
+<br />
+
+</div>
