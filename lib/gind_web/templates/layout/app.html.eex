@@ -16,7 +16,7 @@
   <body>
     <nav>
       <div class="nav-wrapper white">
-        <a href="#" class="brand-logo center black-text thin">The Gin Detective</a>
+        <a href="#" class="brand-logo center black-text thin">THE GIN DETECTIVE</a>
         <ul class="hide-on-med-and-down">
           <li>
             <a href="/" class="left teal-text"><i class="large material-icons">home</i></a>
@@ -26,6 +26,7 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><%= link("Gin", to: "/gin", class: "teal-text") %></li>
           <li><%= link("Bars", to: "/bar", class: "teal-text") %></li>
+          <li><%= link("Gin Jury", to: "/jury", class: "teal-text") %></li>
           <li><span><%= link("About", to: "/about", class: "teal-text") %></span></li>
 
         </ul>
@@ -33,6 +34,7 @@
           <li><span><li><%= link("Home", to: "/", class: "teal-text") %></li></span></li>
           <li><span><li><%= link("Gin", to: "/gin", class: "teal-text") %></li></span></li>
           <li><span><li><%= link("Bars", to: "/bar", class: "teal-text") %></li></span></li>
+          <li><span><li><%= link("Gin Jury", to: "/jury", class: "teal-text") %></li></span></li>
           <hr />
           <li><span><li><%= link("About", to: "/about", class: "teal-text") %></li></span></li>
         </ul>
