@@ -21,7 +21,9 @@ defmodule GindWeb.Router do
     get "/post", PostController, :index
     get "/gin", GinController, :index
     get "/bar", BarController, :index
-    get "jury", JuryController, :index
+    get "/jury", JuryController, :index
+    get "/admin", AdminController, :index
+    get "/suspects", SuspectsController, :index
     resources "/posts", PostController
     resources "/gins", GinController
     resources "/bars", BarController
