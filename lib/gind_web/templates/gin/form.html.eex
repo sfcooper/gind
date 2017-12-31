@@ -5,37 +5,41 @@
     </div>
   <% end %>
 
-  <div class="form-group">
+  <div class="input-field">
     <%= label f, :name, class: "control-label" %>
     <%= text_input f, :name, class: "form-control" %>
     <%= error_tag f, :name %>
   </div>
 
-  <div class="form-group">
+  <div class="input-field">
     <%= label f, :brand, class: "control-label" %>
     <%= text_input f, :brand, class: "form-control" %>
     <%= error_tag f, :brand %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :slug, class: "control-label" %>
-    <%= text_input f, :slug, class: "form-control" %>
-    <%= error_tag f, :slug %>
-  </div>
-
-  <div class="form-group">
+  <div class="input-field">
     <%= label f, :text, class: "control-label" %>
-    <%= text_input f, :text, class: "form-control" %>
+    <%= textarea f, :text, class: "materialize-textarea", placeholder: "Write description of the gin..." %>
     <%= error_tag f, :text %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :status, class: "control-label" %>
-    <%= text_input f, :status, class: "form-control" %>
+  <div class="input-field">
+    <%= label f, :abv, class: "control-label" %>
+    <%= text_input f, :abv, class: "form-control" %>
+    <%= error_tag f, :abv %>
+  </div>
+
+  <div class="input-field">
+    <%= select(f, :status, ["Draft": "draft", "Published": "published"], prompt: "Select post status")%>
     <%= error_tag f, :status %>
   </div>
 
-  <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
+  <div class="input-field">
+    <%= select(f, :suspect, ["Yes": "yes", "No": "no"], prompt: "Is gin in the suspect list?") %>
+    <%= error_tag f, :suspect %>
+  </div>
+
+  <div class="input-field">
+    <%= submit "Submit", class: "btn" %>
   </div>
 <% end %>

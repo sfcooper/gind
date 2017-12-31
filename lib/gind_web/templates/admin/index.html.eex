@@ -1,0 +1,40 @@
+<div class="container">
+  <h1 class="thin">Admin</h1>
+  <h2 class="thin">Posts</h2>
+  <p>
+    There are a total of <%= length(@allposts) %> posts.
+  </p>
+  <%= link "Add New Post", to: post_path(@conn, :new), class: "btn blue" %>
+<br />
+<br />
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Updated</th>
+        <th>Status</th>
+        <th>Actions</th>
+
+
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for post <- @postsdesc do %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.updated_at|> Calendar.Strftime.strftime!("%A, %e %B %Y") %></td>
+        <td><%= post.status %></td>
+
+        <td class="text-right">
+          <span><%= link "Show", to: post_path(@conn, :show, post), class: "btn " %></span>
+          <span><%= link "Edit", to: post_path(@conn, :edit, post), class: "btn orange " %></span>
+          <span><%= link "Delete", to: post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"], class: "btn red" %></span>
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
+
+</div>

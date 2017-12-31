@@ -1,29 +1,34 @@
 <%= form_for @changeset, @action, fn f -> %>
   <%= if @changeset.action do %>
-    <div class="alert alert-danger">
+    <div class="red">
       <p>Oops, something went wrong! Please check the errors below.</p>
     </div>
   <% end %>
 
-  <div class="form-group">
+  <div class="input-field">
     <%= label f, :title, class: "control-label" %>
     <%= text_input f, :title, class: "form-control" %>
     <%= error_tag f, :title %>
   </div>
 
-  <div class="form-group">
+  <div class="input-field">
     <%= label f, :snippet, class: "control-label" %>
     <%= text_input f, :snippet, class: "form-control" %>
     <%= error_tag f, :snippet %>
   </div>
 
-  <div class="form-group">
+  <div class="input-field">
     <%= label f, :text, class: "control-label" %>
-    <%= text_input f, :text, class: "form-control" %>
+    <%= textarea f, :text, class: "materialize-textarea" %>
     <%= error_tag f, :text %>
   </div>
 
+  <div class="input-field">
+    <%= select(f, :status, ["Draft": "draft", "Published": "published"], prompt: "Select post status")%>
+    <%= error_tag f, :status %>
+  </div>
+
   <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
+    <%= submit "Submit", class: "btn blue" %>
   </div>
 <% end %>

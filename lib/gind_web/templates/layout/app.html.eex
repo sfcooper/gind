@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/materialize.css") %>">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=s3clt1mss9a8gnncwtcw7ir633xnu4rnpi2uss6s576tjrut">
+    </script>
+    <script>tinymce.init({ selector:'textarea', theme: 'modern', plugins: "lists autolink", height: 250, });</script>
+
+
   </head>
 
   <body>
@@ -42,8 +47,8 @@
       </div>
     </nav>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+      <p class="blue-text text-lighten-2 bold"><%= get_flash(@conn, :info) %></p>
+      <p class="red-text bold"><%= get_flash(@conn, :error) %></p>
 
 
       <main role="main">
@@ -91,10 +96,6 @@
          gtag('js', new Date());
 
          gtag('config', 'UA-211576-14');
-       </script>
-       <!--Firebase Authentication-->
-       <script type="text/javascript">
-          var provider = new firebase.auth.FacebookAuthProvider();
        </script>
 
   </body>

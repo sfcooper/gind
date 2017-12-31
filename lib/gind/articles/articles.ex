@@ -22,11 +22,11 @@ defmodule Gind.Articles do
   end
 
   def posts_desc do
-    Post |> order_by(desc: :inserted_at) |> offset(1)|> Repo.all()
+    Post |> order_by(desc: :inserted_at) |> where(status: "yes") |> offset(1)|> Repo.all()
   end
 
   def posts_last do
-    Post |> last |> Repo.one()
+    Post |> last  |> where(status: "yes") |> Repo.one()
   end
 
   @doc """

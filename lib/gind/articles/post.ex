@@ -9,6 +9,7 @@ defmodule Gind.Articles.Post do
     field :snippet, :string
     field :text, :string
     field :title, :string
+    field :status, :string
 
     timestamps()
   end
@@ -22,6 +23,7 @@ defmodule Gind.Articles.Post do
     |> validate_required([:title, :snippet, :text, :slug])
   end
 
+# for writing URL as post.title
   defimpl Phoenix.Param, for: Post do
     def to_param(%{slug: slug}) do
       "#{slug}"

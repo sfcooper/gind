@@ -27,6 +27,7 @@ defmodule GindWeb.Router do
     resources "/posts", PostController
     resources "/gins", GinController
     resources "/bars", BarController
+    resources "/users", UserController
   end
 
   # Other scopes may use custom stacks.

@@ -42,6 +42,8 @@ defmodule Gind.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:calecto, "~> 0.16.0"},
+      {:earmark, "~> 1.0.1"},
+      {:comeonin, "~> 4.0.3"}
     ]
   end
 

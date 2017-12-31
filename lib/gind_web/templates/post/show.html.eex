@@ -1,13 +1,13 @@
 <div class="container">
 
-<h2 class="teal-text"><%= @post.title %></h2>
+<h2 class="teal-text thin"><%= @post.title %></h2>
 
     <p class="flow-text">
     <%= @post.snippet %>
   </p>
 
   <p>
-    <%= @post.text %>
+    <%= raw(@post.text) %>
   </p>
 
 

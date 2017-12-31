@@ -13,8 +13,8 @@
   </li>
 
   <li>
-    <strong>Slug:</strong>
-    <%= @gin.slug %>
+    <strong>ABV:</strong>
+    <%= @gin.abv %>
   </li>
 
   <li>
